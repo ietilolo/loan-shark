@@ -59,12 +59,12 @@
                   aria-label="Enter Loan Amount">
               </div>
               <div class="col">
-                <input id="loanPaymentMonths" type="number" min="0" class="form-control"
+                <input id="loanMonths" type="number" min="0" class="form-control"
                   placeholder="Enter Repayment Duration (Months)" aria-label="Enter Loan Amount">
               </div>
               <div class="col">
-                <input id="loanInterestRate" type="number" min="0" class="form-control"
-                  placeholder="Enter Interest Rate" aria-label="Enter Interest Rate">
+                <input id="loanRate" type="number" min="0" class="form-control" placeholder="Enter Interest Rate"
+                  aria-label="Enter Interest Rate">
               </div>
               <div class="col-12 d-flex justify-content-end mb-2">
                 <button id="btnSubmit" class="btn btn-dark btn-md" type="button">calculate</button>
@@ -73,10 +73,12 @@
           </div>
         </div>
         <div class="col col-lg-8 border-end border-2">
-          <h1>Loan Shark: A Coding Project</h1>
-          <h4 class="lead">Stay on top of your repayments!</h4>
-          <p>Enter the amount of loan your borrowing, time in which you have to repay (in months) and the interest rate.
-          </p>
+          <h1>Loan Details</h1>
+          <h3>Your monthly payments</h3>
+          <h3 class="lead">$<span id="loanMonthlyPayments">269.53</span></h3>
+          <h4>Total principle <span class="lead" id="loanTotalPrinciple">$15,000.00</span></h4>
+          <h4>Total interest <span class="lead" id="loanTotalInterest">$1,171.82</span></h4>
+          <h4>Total cost <span class="lead" id="loanTotalInterest">$16,171.82</span></h4>
         </div>
         <div class="col col-lg-12 border-top border-2">
           <div id="results">
@@ -128,6 +130,9 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
   <script src="./js/site.js"></script>
+  <script>
+    document.getElementById("btnSubmit").addEventListener("click", getValues);
+  </script>
 
 </body>
 
